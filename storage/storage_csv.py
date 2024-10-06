@@ -14,18 +14,18 @@ class StorageCSV(IStorage):
     def __init__(
             self,
             directory: str,
-            user: str
+            file_name: str
     ) -> None:
         """
         Calls the super function to initialize the parent-class-data. Specifies the
         file_extension as "csv".
         :param directory: The base-directory of the storage.
-        :param user: The file-name of the storage, e.g. username or uuid.
+        :param file_name: The file-name of the storage, e.g. username or uuid.
         """
         super().__init__(
             directory=directory,
             file_extension="csv",
-            user=user
+            file_name=file_name
         )
 
     def _read_from_file(self) -> list[dict]:

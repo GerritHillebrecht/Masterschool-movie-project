@@ -14,21 +14,21 @@ class StorageJson(IStorage):
     def __init__(
             self,
             directory: str,
-            user: str
+            file_name: str
     ) -> None:
         """
         Calls the super function to initialize the parent-class-data. Specifies the
         file_extension as "json".
         :param directory: The base-directory of the storage.
-        :param user: The file-name of the storage, e.g. username or uuid.
+        :param file_name: The file-name of the storage, e.g. username or uuid.
         """
         super().__init__(
             directory=directory,
             file_extension="json",
-            user=user
+            file_name=file_name
         )
 
-    def _read_from_file(self) -> list[dict]:
+    def _read_from_file(self) -> dict[str, dict]:
         """
         Loads the data from the user-file.
         File existence is checked upon initialization of the class.
@@ -36,9 +36,9 @@ class StorageJson(IStorage):
 
         with open(self._file_path, "r") as handle:
             storage_data = handle.read()
-            return loads(storage_data) if len(storage_data) > 0 else []
+            return loads(storage_data) if len(storage_data) > 0 else {}
 
-    def _write_to_file(self, content: list[dict]) -> list[dict]:
+    def _write_to_file(self, content: dict[str, dict]) -> dict[str, dict]:
         """
         Writes to specified user-file.
         File existence is checked upon initialization of the class.

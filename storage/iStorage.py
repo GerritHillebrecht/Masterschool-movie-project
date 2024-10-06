@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from os import path
+from os import path, getcwd
 
 """
 I don't see why we need an abstract class for this, since this mainly creates duplicate
@@ -13,29 +13,29 @@ directly from the user and initialize it with the correct user data.
 
 # Naming interfaces with a leading "i" is outdated btw.
 class IStorage(ABC):
-    __slots__ = ("_directory", "_file_extension", "_user", "_file_path")
+    __slots__ = ("_directory", "_file_extension", "_file_name", "_file_path")
 
     def __init__(
             self,
             directory: str,
             file_extension: str,
-            user: str
+            file_name: str
     ) -> None:
         """
         Takes in the parameters needed for reading and writing to storage files.
         Done inside the parent-class, to reduce duplicate code.
         :param directory: The base-path of the directory where the data should be stored.
         :param file_extension: The file-extension, only "json" and "csv" are currently supported
-        :param user: The filename this is saved to. E.g. the username or the uuid.
+        :param file_name: The filename this is saved to. E.g. the username or the uuid.
         """
         self._directory = directory
         self._file_extension = file_extension
-        self._user = user
-        self._file_path = str(path.join(self._file_path, f"{self._user}.{self._file_extension}"))
+        self._file_name = file_name
+        self._file_path = str(path.join(getcwd(), self._directory, f"{self._file_name}.{self._file_extension}"))
 
         self._create_file_if_not_exists()
 
-    def list_movies(self) -> list[dict]:
+    def list_movies(self) -> dict[str, dict]:
         """ Returns the list of movies saved in the storage. """
         return self._read_from_file()
 
@@ -58,41 +58,38 @@ class IStorage(ABC):
             raise ValueError("Please provide all the needed data about the movie.")
 
         movies_in_storage = self._read_from_file()
-        new_movie = {
+
+        if title in movies_in_storage:
+            raise ValueError("Movie already in storage.")
+
+        movies_in_storage[title] = {
             "title": title,
             "year": year,
             "rating": rating,
             "poster": poster
         }
 
-        self._write_to_file(movies_in_storage + [new_movie])
+        self._write_to_file(movies_in_storage)
 
-    def delete_movie(self, title: str) -> list[dict]:
+    def delete_movie(self, title: str) -> dict[str, dict]:
         """
         Delete a movie from the storage.
         :param title: The title of the movie.
         :return: The movies in the storage after deletion.
         """
         movies_in_storage = self._read_from_file()
-        movie_exists = bool(next(
-            (movie for movie in movies_in_storage),
-            None
-        ))
+        movie_exists = title in movies_in_storage
 
         if not movie_exists:
             raise ValueError("Movie not found in the storage.")
 
-        filtered_movies = [
-            movie
-            for movie in movies_in_storage
-            if movie.get("title", "") != title
-        ]
+        del movies_in_storage[title]
 
-        self._write_to_file(filtered_movies)
+        self._write_to_file(movies_in_storage)
 
-        return filtered_movies
+        return movies_in_storage
 
-    def update_movie(self, title, rating) -> dict:
+    def update_movie(self, title: str, rating: int | float) -> dict:
         """
         Updates the rating of a movie.
         :param title: The title of the movie to be updated. Must be precise.
@@ -100,27 +97,22 @@ class IStorage(ABC):
         :return: The updated movie data.
         """
         movies_in_storage = self._read_from_file()
-        movie = next(
-            movie
-            for movie in movies_in_storage
-            if movie.get("title", "") == title
-        )
 
-        if not movie:
+        if title not in movies_in_storage:
             raise ValueError("Movie not found in the storage.")
 
-        movie["rating"] = rating
+        movies_in_storage[title]["rating"] = rating
 
         self._write_to_file(movies_in_storage)
 
-        return movie
+        return movies_in_storage.get(title)
 
     @abstractmethod
-    def _read_from_file(self) -> list[dict]:
+    def _read_from_file(self) -> dict[str, dict]:
         pass
 
     @abstractmethod
-    def _write_to_file(self, content: list) -> list[dict]:
+    def _write_to_file(self, content: dict[str, dict]) -> dict[str, dict]:
         pass
 
     def _create_file_if_not_exists(self):
