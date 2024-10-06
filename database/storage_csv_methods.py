@@ -1,5 +1,5 @@
 from os import path
-from config.config import DATABASE_FILE_NAME_CSV, DATABASE_CSV_SEPERATOR_SYMBOL, SUPPORTED_MOVIE_DATA
+from config.config import DATABASE_FILE_NAME_CSV, STORAGE_CSV_SEPERATOR_SYMBOL, SUPPORTED_MOVIE_DATA
 
 
 def read_database_csv() -> list[dict]:
@@ -37,7 +37,7 @@ def convert_from_database(lines) -> list[dict]:
             # Reads the data structure from the config-file
             SUPPORTED_MOVIE_DATA[idx]["name"]: value
             # Strips all trailing " " and "\n". Splits by the database seperator-symbol from the config-file.
-            for idx, value in enumerate(line.strip().split(DATABASE_CSV_SEPERATOR_SYMBOL))
+            for idx, value in enumerate(line.strip().split(STORAGE_CSV_SEPERATOR_SYMBOL))
         }
         for line in lines
     ]
@@ -51,7 +51,7 @@ def convert_to_database(movies: list[dict]) -> str:
     """
     return "".join(
         [
-            DATABASE_CSV_SEPERATOR_SYMBOL.join([str(val) for val in movie.values()]) + "\n"
+            STORAGE_CSV_SEPERATOR_SYMBOL.join([str(val) for val in movie.values()]) + "\n"
             for movie in movies
         ]
     )

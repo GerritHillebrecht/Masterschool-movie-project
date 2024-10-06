@@ -4,65 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="496b8a24-3b3c-49bc-9282-6b76ee63d3e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Movie-App-Reloaded.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/validators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crud/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crud/create.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crud/delete.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crud/read.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crud/update.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/storage_csv_methods.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/storage_driver.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/storage_json_methods.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mix/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mix/movie_random.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mix/movie_search.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mix/movie_stats.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mix/movies_filtered.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mix/movies_sorted.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/start_loop.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utility/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utility/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Python/SE103/academy/polymorphism/abstract.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Python/SE103/academy/unit-tests/first-substrin/first_substring.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Python/SE103/academy/unit-tests/first-substrin/test_first_substring.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Python/SE103/academy/unit-tests/upper-lower/test_upper_lower.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Python/SE103/academy/unit-tests/upper-lower/upper_lower.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Python/SE103/academy/unit-tests/walnut-party/test_walnut_party.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Python/SE103/academy/unit-tests/walnut-party/walnut_party.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Python/SE103/codio/api/fruits.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Python/SE103/codio/api/holiday.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Python/SE103/codio/sparse/sparseArray.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Python/SE103/codio/zootopia/zootopia_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Python/testing/asd.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Python/testing/codewars/codewars.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Python/testing/interview.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/MasterSchool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/MasterSchool.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Python/SE103/academy/filesystem.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Python/SE103/academy/filesystem/filesystem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Python/SE103/academy/folder/subfolder/content.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Python/SE103/academy/filesystem/folder/subfolder/content.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Python/SE103/academy/os-testing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Python/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Python/main.py" afterDir="false" />
+    <list default="true" id="496b8a24-3b3c-49bc-9282-6b76ee63d3e9" name="Changes" comment="Initial commit of the code from the previous project. Slightly refactored.">
+      <change afterPath="$PROJECT_DIR$/storage/iStorage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/storage_csv.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/storage_json.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/storage_csv_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/storage_csv_methods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -85,15 +50,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Development/MasterSchool/Movie-App-Reloaded"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Development/MasterSchool/Movie-App-Reloaded&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Development\MasterSchool\Movie-App-Reloaded" />
@@ -142,6 +107,19 @@
       <option name="presentableId" value="Default" />
       <updated>1728047149827</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit of the code from the previous project. Slightly refactored.">
+      <option name="closed" value="true" />
+      <created>1728129974067</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1728129974067</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit of the code from the previous project. Slightly refactored." />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
