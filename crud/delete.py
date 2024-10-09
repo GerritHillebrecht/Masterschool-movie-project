@@ -1,22 +1,21 @@
-from database import read_from_database, write_to_database
-from utility import index_of_matching_movie
+from storage import IStorage
 
 
-def delete_movie() -> None:
+def delete_movie(storage: IStorage) -> None:
     """
     Prompts the user for a movie name. Checks if the database has a movie that matches the prompt.
     Loops the prompt until a movie is found or the user exits. Updates the database accordingly.
     """
     while True:
-        search_str = input("Enter movie name to delete ('Exit' to abort): ")
-        if search_str.lower() == "exit":
-            return
+        movie_title = input("Enter movie name to delete ('Exit' to abort): ")
 
-        movies_in_database = read_from_database()
-        index = index_of_matching_movie(search_str, movies_in_database)
-
-        if len(index) != 1:
+        if not movie_title:
+            print("Enter a movie title.")
             continue
 
-        del movies_in_database[index[0]]
-        return write_to_database(movies_in_database)
+        if movie_title.lower() == "exit":
+            return
+
+        storage.delete_movie(movie_title)
+        print(f"{movie_title} successfully deleted from storage.")
+        return

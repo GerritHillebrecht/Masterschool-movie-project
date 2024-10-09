@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from os import path, getcwd
+from utility import create_movie_key
 
 """
 I don't see why we need an abstract class for this, since this mainly creates duplicate
@@ -58,11 +59,12 @@ class IStorage(ABC):
             raise ValueError("Please provide all the needed data about the movie.")
 
         movies_in_storage = self._read_from_file()
+        title_key = create_movie_key(title)
 
-        if title in movies_in_storage:
+        if title_key in movies_in_storage:
             raise ValueError("Movie already in storage.")
 
-        movies_in_storage[title] = {
+        movies_in_storage[title_key] = {
             "title": title,
             "year": year,
             "rating": rating,
@@ -78,12 +80,12 @@ class IStorage(ABC):
         :return: The movies in the storage after deletion.
         """
         movies_in_storage = self._read_from_file()
-        movie_exists = title in movies_in_storage
+        title_key = create_movie_key(title)
 
-        if not movie_exists:
+        if title_key not in movies_in_storage:
             raise ValueError("Movie not found in the storage.")
 
-        del movies_in_storage[title]
+        del movies_in_storage[title_key]
 
         self._write_to_file(movies_in_storage)
 

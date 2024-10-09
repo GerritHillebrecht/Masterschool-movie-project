@@ -1,19 +1,23 @@
-from database import read_from_database, write_to_database
 from config import SUPPORTED_MOVIE_DATA
+from storage import iStorage
 
 
-def add_movie() -> None:
+def add_movie(storage: iStorage) -> None:
     """
     Loads the required Meta-data for each movie from the config file.
     Prompts the user for each meta-data-item and validates the input. Updates the database accordingly.
     :return:
     """
+
     movie_data = {
         prompt["name"]: validated_input(prompt)
         for prompt in SUPPORTED_MOVIE_DATA
     }
-    write_to_database(
-        read_from_database() + [movie_data]
+    storage.add_movie(
+        title=movie_data["title"],
+        year=int(movie_data["year"]),
+        rating=float(movie_data["rating"]),
+        poster=movie_data["poster"],
     )
 
 

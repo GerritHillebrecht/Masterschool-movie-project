@@ -1,3 +1,14 @@
+from string import ascii_lowercase
+
+
+def create_movie_key(title: str) -> str:
+    return "".join(
+        char
+        for char in title.strip().replace(" ", "_").lower()
+        if char in ascii_lowercase or char in "_"
+    )
+
+
 def index_of_matching_movie(search_str: str, movies: list[dict]) -> list[int]:
     """
     Takes in a search string and a list of dictionaries.
@@ -26,7 +37,7 @@ def index_of_matching_movie(search_str: str, movies: list[dict]) -> list[int]:
 
 def get_matching_movies(search_str, movies) -> list[tuple[int, str]]:
     """
-    Matches all movies of the database against the search_str and returns the movie titles and indices.
+    Matches all movies of the storage against the search_str and returns the movie titles and indices.
     :param search_str: The search substr.
     :param movies: The movie-list from the database.
     :return: Filtered list of matching movies including indices.

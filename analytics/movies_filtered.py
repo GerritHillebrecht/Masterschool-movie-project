@@ -1,12 +1,12 @@
-from database import read_from_database
+from storage import iStorage
 from config import SUPPORTED_MOVIE_DATA, MAX_RATING
 
 
-def filter_movies() -> None:
+def filter_movies(storage: iStorage) -> None:
     """
     Prompts the user for filter options and prints the movie list altered by these filters.
     """
-    movies = read_from_database()
+    movies = storage.list_movies().values()
 
     rating = prompt_and_validate_rating()
     if rating:

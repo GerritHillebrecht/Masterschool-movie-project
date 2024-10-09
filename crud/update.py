@@ -1,30 +1,26 @@
 from utility import index_of_matching_movie
-from database import read_from_database, write_to_database
 from config import SUPPORTED_MOVIE_DATA
+from storage import iStorage
 
 
-def update_movie() -> None:
+def update_movie(storage: iStorage) -> None:
     """
     Prompts the user for the movie title to update. If found, prompts for an updated rating.
     Updates the database accordingly.
     :return:
     """
     while True:
-        search_str = input("Enter movie name (Exit to abort): ")
+        movie_title = input("Enter movie name (Exit to abort): ")
 
-        # Guard clause: Exit
-        if search_str.lower() == "exit":
-            return
-
-        movies_in_database = read_from_database()
-        index: list[int] = index_of_matching_movie(search_str, movies_in_database)
-
-        if len(index) != 1:
+        if not movie_title:
+            print("Please enter a movie name.")
             continue
 
-        movies_in_database[index[0]]["rating"] = prompt_updated_rating()
-        write_to_database(movies_in_database)
-        return
+        # Guard clause: Exit
+        if movie_title.lower() == "exit":
+            return
+
+        return storage.update_movie(movie_title, prompt_updated_rating())
 
 
 def prompt_updated_rating() -> float:
