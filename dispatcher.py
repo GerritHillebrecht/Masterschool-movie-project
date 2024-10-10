@@ -1,6 +1,7 @@
 from collections import OrderedDict
 import crud
 import analytics
+from web_gen import generate_website
 
 dispatcher: OrderedDict[str, dict] = OrderedDict({
     # 1. Read
@@ -61,5 +62,11 @@ dispatcher: OrderedDict[str, dict] = OrderedDict({
     "filter_movies": {
         "name": "Filter movies",
         "function": lambda storage: analytics.filter_movies(storage)
+    },
+
+    # 11. Generate Website
+    "generate_website": {
+        "name": "Generate Website",
+        "function": lambda storage: generate_website(storage)
     }
 })
