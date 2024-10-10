@@ -1,4 +1,3 @@
-from config import MAX_RATING
 from dispatcher import dispatcher
 from user import User
 

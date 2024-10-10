@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 from os import path, getcwd
+from collections import OrderedDict
+
 from utility import create_movie_key
 
 """
@@ -40,7 +42,7 @@ class IStorage(ABC):
         """ Returns the list of movies saved in the storage. """
         return self._read_from_file()
 
-    def add_movie(self, title: str, year: int, rating: int | float, poster: str) -> None:
+    def add_movie(self, title: str, year: int, rating: float, poster: str) -> None:
         """ Adds a movie to the database. """
 
         if not isinstance(title, str):
@@ -49,8 +51,8 @@ class IStorage(ABC):
         if not isinstance(year, int):
             raise TypeError("Please provide the year of release as an integer.")
 
-        if not isinstance(rating, (int, float)):
-            raise TypeError("Please provide a rating as integer or float")
+        if not isinstance(rating, float):
+            raise TypeError("Please provide the rating as float value.")
 
         if not isinstance(poster, str):
             raise TypeError("Please provide a poster-url as a string.")
@@ -64,12 +66,12 @@ class IStorage(ABC):
         if title_key in movies_in_storage:
             raise ValueError("Movie already in storage.")
 
-        movies_in_storage[title_key] = {
+        movies_in_storage[title_key] = OrderedDict({
             "title": title,
-            "year": year,
             "rating": rating,
+            "year": year,
             "poster": poster
-        }
+        })
 
         self._write_to_file(movies_in_storage)
 

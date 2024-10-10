@@ -8,11 +8,11 @@ class User:
 
     def __init__(self, name):
         self._name = name
-        self._storage = StorageCSV(
+        self._storage = StorageJson(
             directory=str(path.join(
                 getcwd(),
                 STORAGE_PATHS["base"],
-                STORAGE_PATHS["csv"]
+                STORAGE_PATHS["json"]
             )),
             file_name=name
         )

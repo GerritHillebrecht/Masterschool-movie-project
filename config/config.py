@@ -1,16 +1,20 @@
 from config.validators import is_float
 from os import path
 
-# SELECT THE DATABASE TYPE TO USE. ENTER "JSON" OR "CSV".
-SELECTED_DATABASE = "JSON"
+# SELECT THE STORAGE TYPE TO USE. ENTER "JSON" OR "CSV".
 STORAGE_PATHS = {
     "base": path.join("storage", "persistence"),
     "json": "json",
     "csv": "csv",
 }
-DATABASE_FILE_NAME_CSV = "static_file_database.csv"
-DATABASE_FILE_NAME_JSON = "static_file_database.json"
-STORAGE_CSV_SEPERATOR_SYMBOL = ","
+STORAGE_FILE_NAME_CSV = "static_file_database.csv"
+STORAGE_FILE_NAME_JSON = "static_file_database.json"
+STORAGE_CSV_SEPERATOR_SYMBOL = "-;-"
+
+API_DATABASE_BASE_URL = "http://www.omdbapi.com/"
+API_DATABASE_IMG_URL = "http://img.omdbapi.com/"
+API_RETRY_COUNTER = 5
+API_RETRY_PAUSE = 3
 
 WELCOME_MESSAGE = """
                WELCOME TO MY

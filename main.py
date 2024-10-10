@@ -1,6 +1,10 @@
+from dotenv import load_dotenv
+
 from app import MovieApp
-from user import User
 from config import WELCOME_MESSAGE
+from user import User
+
+load_dotenv()
 
 
 def main() -> None:
