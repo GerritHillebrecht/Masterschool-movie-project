@@ -1,9 +1,9 @@
-from storage import iStorage
+from storage import IStorage
 from statistics import mean
 from math import ceil
 
 
-def stats(storage: iStorage) -> None:
+def stats(storage: IStorage) -> None:
     """
     Prints various stats about the movies in the database.
     """

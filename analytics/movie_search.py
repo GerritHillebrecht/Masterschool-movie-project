@@ -1,8 +1,8 @@
 from utility import get_matching_movies
-from storage import iStorage
+from storage import IStorage
 
 
-def search_movie(storage: iStorage) -> None:
+def search_movie(storage: IStorage) -> None:
     """
     Fetches all movies from the database and filters them depending on a prompted search_string.
     :return:

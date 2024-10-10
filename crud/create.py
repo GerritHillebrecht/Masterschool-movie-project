@@ -1,8 +1,8 @@
 from config import SUPPORTED_MOVIE_DATA
-from storage import iStorage
+from storage import IStorage
 
 
-def add_movie(storage: iStorage) -> None:
+def add_movie(storage: IStorage) -> None:
     """
     Loads the required Meta-data for each movie from the config file.
     Prompts the user for each meta-data-item and validates the input. Updates the database accordingly.

@@ -1,7 +1,7 @@
-from storage import iStorage
+from storage import IStorage
 
 
-def print_movies_by_rating(storage: iStorage) -> None:
+def print_movies_by_rating(storage: IStorage) -> None:
     """
     Prints all movies ordered by rating.
     """
@@ -16,7 +16,7 @@ def print_movies_by_rating(storage: iStorage) -> None:
     print("")
 
 
-def print_movies_by_release(storage: iStorage) -> None:
+def print_movies_by_release(storage: IStorage) -> None:
     """
     Prints all movies ordered by release.
     """

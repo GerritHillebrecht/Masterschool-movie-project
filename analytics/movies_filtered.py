@@ -1,8 +1,8 @@
-from storage import iStorage
+from storage import IStorage
 from config import SUPPORTED_MOVIE_DATA, MAX_RATING
 
 
-def filter_movies(storage: iStorage) -> None:
+def filter_movies(storage: IStorage) -> None:
     """
     Prompts the user for filter options and prints the movie list altered by these filters.
     """

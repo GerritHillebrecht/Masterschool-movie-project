@@ -7,7 +7,7 @@ I don't see why we need an abstract class for this, since this mainly creates du
 code (double crud functions). You can just have filepath and filetype as parameters of the init function.
 Changed the layout, so we have abstract methods for the read and write functions instead.
 
-This will be used as an extension of the user-class, so we can call the storage functions
+This will be used as a property of the user-class, so we can call the storage functions
 directly from the user and initialize it with the correct user data. 
 """
 

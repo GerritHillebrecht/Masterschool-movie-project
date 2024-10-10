@@ -4,23 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="496b8a24-3b3c-49bc-9282-6b76ee63d3e9" name="Changes" comment="[feat] Changed storage data type to dict instead of list.">
-      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/movieApp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/user.py" afterDir="false" />
+    <list default="true" id="496b8a24-3b3c-49bc-9282-6b76ee63d3e9" name="Changes" comment="[feat] Updated to the movie-app-class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/analytics/movie_random.py" beforeDir="false" afterPath="$PROJECT_DIR$/analytics/movie_random.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/analytics/movie_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/analytics/movie_search.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/analytics/movie_stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/analytics/movie_stats.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analytics/movies_filtered.py" beforeDir="false" afterPath="$PROJECT_DIR$/analytics/movies_filtered.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analytics/movies_sorted.py" beforeDir="false" afterPath="$PROJECT_DIR$/analytics/movies_sorted.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crud/create.py" beforeDir="false" afterPath="$PROJECT_DIR$/crud/create.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crud/delete.py" beforeDir="false" afterPath="$PROJECT_DIR$/crud/delete.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crud/read.py" beforeDir="false" afterPath="$PROJECT_DIR$/crud/read.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crud/update.py" beforeDir="false" afterPath="$PROJECT_DIR$/crud/update.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/storage_csv_methods.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/storage_driver.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/storage_json_methods.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/storage/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/iStorage.py" beforeDir="false" afterPath="$PROJECT_DIR$/storage/iStorage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utility/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utility/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/storage_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/storage/storage_csv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,13 +141,22 @@
       <option name="project" value="LOCAL" />
       <updated>1728218551544</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[feat] Updated to the movie-app-class">
+      <option name="closed" value="true" />
+      <created>1728473868879</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1728473868879</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit of the code from the previous project. Slightly refactored." />
     <MESSAGE value="[feat] Added iStorage, StorageJSON and StorageSCV classes" />
     <MESSAGE value="[feat] Changed storage data type to dict instead of list." />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] Changed storage data type to dict instead of list." />
+    <MESSAGE value="[feat] Updated to the movie-app-class" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] Updated to the movie-app-class" />
   </component>
 </project>

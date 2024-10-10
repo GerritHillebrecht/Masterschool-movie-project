@@ -1,9 +1,8 @@
-from utility import index_of_matching_movie
 from config import SUPPORTED_MOVIE_DATA
-from storage import iStorage
+from storage import IStorage
 
 
-def update_movie(storage: iStorage) -> None:
+def update_movie(storage: IStorage) -> None:
     """
     Prompts the user for the movie title to update. If found, prompts for an updated rating.
     Updates the database accordingly.
@@ -20,7 +19,14 @@ def update_movie(storage: iStorage) -> None:
         if movie_title.lower() == "exit":
             return
 
-        return storage.update_movie(movie_title, prompt_updated_rating())
+        new_rating = prompt_updated_rating()
+
+        storage.update_movie(
+            movie_title,
+            new_rating
+        )
+
+        print(f"{movie_title}'s rating updated to {new_rating}")
 
 
 def prompt_updated_rating() -> float:
