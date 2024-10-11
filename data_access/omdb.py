@@ -32,10 +32,10 @@ def fetch_movie(title):
 
         res_json = res.json()
 
-        if not res_json["Response"]:
+        if res_json["Response"] == "False":
             raise ValueError(f"Couldn't find movie {title}")
 
-        return res.json()
+        return res_json
 
 
 def fetch_poster(title):
