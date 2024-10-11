@@ -168,11 +168,12 @@ class IStorage(ABC):
         :return: The updated movie data.
         """
         movies_in_storage = self._read_from_file()
+        title_key = create_movie_key(title)
 
-        if title not in movies_in_storage:
+        if title_key not in movies_in_storage:
             raise ValueError("Movie not found in the storage.")
 
-        movies_in_storage[title]["notes"] = notes
+        movies_in_storage[title_key]["notes"] = notes
 
         self._write_to_file(movies_in_storage)
 

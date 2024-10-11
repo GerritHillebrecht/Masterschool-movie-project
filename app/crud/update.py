@@ -1,5 +1,5 @@
-from config import SUPPORTED_MOVIE_DATA
 from storage import IStorage
+from utility import create_movie_key
 
 
 def update_movie(storage: IStorage) -> None:
@@ -7,16 +7,22 @@ def update_movie(storage: IStorage) -> None:
     Prompts the user for the movie title to update. If found, prompts for an updated rating.
     Updates the database accordingly.
     """
+    movies = storage.list_movies()
+
     while True:
         movie_title = input("Enter movie name ('Exit' to abort): ")
 
         if not movie_title:
-            print(f"Could not find movie {movie_title}. Please enter a movie name.")
+            print(f"Please enter a movie name.")
             continue
 
         # Guard clause: Exit
         if movie_title.lower() == "exit":
             return
+
+        if create_movie_key(movie_title) not in movies:
+            print(f"Movie {movie_title} could not be found in the storage.")
+            continue
 
         notes = prompt_movie_notes()
 
@@ -25,7 +31,7 @@ def update_movie(storage: IStorage) -> None:
             notes
         )
 
-        print(f"{movie_title}'s rating updated to {notes}")
+        print(f"{movie_title}'s notes updated to: {notes}")
 
 
 def prompt_movie_notes() -> str:
