@@ -24,6 +24,7 @@ Run this script directly to start the movie application.
 from dotenv import load_dotenv
 
 from sys import argv
+from argparse import ArgumentParser
 
 from app import MovieApp
 from config import WELCOME_MESSAGE
@@ -36,13 +37,26 @@ def main() -> None:
     """
     Welcomes the user and starts the command prompt-loop.
     """
+    # Parses arg input from the cli
+    parser = ArgumentParser()
+    parser.add_argument(
+        "--username",
+        help="Provide which user uses the app.",
+        type=str
+    )
+    parser.add_argument(
+        "--storage_type",
+        help="Select Storage type: json or csv",
+        type=str
+    )
+    args = parser.parse_args()
 
     # Inform the user that the program is running by sending a welcome-message.
     print(WELCOME_MESSAGE)
 
     # Select the user
-    username = select_user(argv[1] if len(argv) > 1 else None)
-    user = User(name=username)
+    username = select_user(args.username)
+    user = User(name=username, storage_type=args.storage_type)
 
     # Instantiate Movie App and start it with selected user.
     MovieApp(user).start()

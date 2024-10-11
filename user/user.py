@@ -38,7 +38,7 @@ from json import loads, dumps
 from os import getcwd, path
 
 from config import STORAGE_PATHS
-from storage import IStorage, StorageJson
+from storage import IStorage, StorageJson, StorageCSV
 
 user_file = f"{path.join(
     getcwd(),
@@ -63,7 +63,7 @@ class User:
     """
     __slots__ = ("_name", "_storage")
 
-    def __init__(self, name):
+    def __init__(self, name, storage_type="json"):
         """
         Initializes a User instance.
 
@@ -76,6 +76,13 @@ class User:
                 getcwd(),
                 STORAGE_PATHS["base"],
                 STORAGE_PATHS["json"]
+            )),
+            file_name=name
+        ) if storage_type == "json" else StorageCSV(
+            directory=str(path.join(
+                getcwd(),
+                STORAGE_PATHS["base"],
+                STORAGE_PATHS["csv"]
             )),
             file_name=name
         )
