@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="496b8a24-3b3c-49bc-9282-6b76ee63d3e9" name="Changes" comment="[feat] Added command-line user input">
+    <list default="true" id="496b8a24-3b3c-49bc-9282-6b76ee63d3e9" name="Changes" comment="[feat] Added command-line storage selection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/read.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/read.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/update.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/update.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/iStorage.py" beforeDir="false" afterPath="$PROJECT_DIR$/storage/iStorage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728649794578</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="[feat] Added command-line storage selection">
+      <option name="closed" value="true" />
+      <created>1728650672653</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1728650672653</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -253,6 +264,7 @@
     <MESSAGE value="[chore] Updated Documentation" />
     <MESSAGE value="[chore] Slight refactoring" />
     <MESSAGE value="[feat] Added command-line user input" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] Added command-line user input" />
+    <MESSAGE value="[feat] Added command-line storage selection" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] Added command-line storage selection" />
   </component>
 </project>

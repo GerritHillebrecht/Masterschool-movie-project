@@ -155,12 +155,12 @@ class IStorage(ABC):
         return movies_in_storage
 
     # Unused, but stays until movie-app v3
-    def update_movie(self, title: str, rating: int | float) -> dict:
+    def update_movie(self, title: str, notes: str) -> dict:
         """
-        Updates the rating of a movie.
+        Updates the notes of a movie.
 
         :param title: The title of the movie to be updated. Must be precise.
-        :param rating: The new rating of the movie.
+        :param notes: The notes of the movie.
         :return: The updated movie data.
         """
         movies_in_storage = self._read_from_file()
@@ -168,7 +168,7 @@ class IStorage(ABC):
         if title not in movies_in_storage:
             raise ValueError("Movie not found in the storage.")
 
-        movies_in_storage[title]["rating"] = rating
+        movies_in_storage[title]["notes"] = notes
 
         self._write_to_file(movies_in_storage)
 

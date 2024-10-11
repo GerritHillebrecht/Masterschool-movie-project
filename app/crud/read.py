@@ -8,5 +8,11 @@ def list_movies(storage: IStorage) -> None:
 
     print(f'\n{len(movies_in_storage)} movies in total:')
     for idx, movie in enumerate(movies_in_storage.values()):
-        print(f'{idx + 1}. {movie["title"]} ({movie["year"]}): {movie["rating"]}/{MAX_RATING}')
+        i = idx + 1
+        title = movie["title"]
+        year = movie["year"]
+        rating = f"{movie["rating"]}/{MAX_RATING}"
+        notes = f"Notes: {movie["notes"]}" if movie.get("notes") else ""
+
+        print(f'{i}. {title} ({year}): {rating}. {notes}')
     print("")

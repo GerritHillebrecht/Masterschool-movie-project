@@ -56,7 +56,7 @@ def main() -> None:
 
     # Select the user
     username = select_user(args.username)
-    user = User(name=username, storage_type=args.storage_type)
+    user = User(name=username, storage_type=args.storage_type or "json")
 
     # Instantiate Movie App and start it with selected user.
     MovieApp(user).start()

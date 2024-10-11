@@ -41,7 +41,7 @@ def generate_movie_grid(movies: dict[str, dict]) -> str:
     return "".join(
         f"""
         <li>
-            <div class="movie">
+            <div title="{movie.get("notes") or ""}" class="movie">
                 <div class="rating">{movie["rating"]} / {MAX_RATING}</div>
                 <img class="movie-poster" src="{movie["poster"]}" alt="{movie["title"]}">
                 <div class="movie-title">{movie["title"]}</div>

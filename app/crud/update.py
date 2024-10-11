@@ -11,30 +11,33 @@ def update_movie(storage: IStorage) -> None:
         movie_title = input("Enter movie name ('Exit' to abort): ")
 
         if not movie_title:
-            print("Please enter a movie name.")
+            print(f"Could not find movie {movie_title}. Please enter a movie name.")
             continue
 
         # Guard clause: Exit
         if movie_title.lower() == "exit":
             return
 
-        new_rating = prompt_updated_rating()
+        notes = prompt_movie_notes()
 
         storage.update_movie(
             movie_title,
-            new_rating
+            notes
         )
 
-        print(f"{movie_title}'s rating updated to {new_rating}")
+        print(f"{movie_title}'s rating updated to {notes}")
 
 
-def prompt_updated_rating() -> float:
+def prompt_movie_notes() -> str:
     """
     Prompts the user for an updated rating value and validates it according to the config file.
     :return: Returns the updated rating as a float.
     """
     while True:
-        user_input = input("Enter new movie rating: ")
-        if SUPPORTED_MOVIE_DATA[1]["validator"](user_input):
-            return float(user_input)
-        print(SUPPORTED_MOVIE_DATA[1]["validator_message"])
+        movie_notes = input("Enter movie notes: ")
+
+        if not movie_notes:
+            print("Please provide some notes. You cannot skip this, because fuck you that's why.")
+            continue
+
+        return movie_notes

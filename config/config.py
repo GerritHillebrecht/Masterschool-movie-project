@@ -55,6 +55,13 @@ SUPPORTED_MOVIE_DATA = [
         "label": "Poster of the movie",
         "prompt": "Enter the url to the movie poster: ",
         "validator": lambda poster: poster and isinstance(poster, str),
-        "validator_message": f"Please a string value for the url>."
+        "validator_message": f"Please provide a string value for the url."
+    },
+    {
+        "name": "notes",
+        "label": "Movies notes",
+        "prompt": "Enter some notes for the movie: ",
+        "validator": lambda notes: notes and isinstance(notes, str),
+        "validator_message": f"Please provide a string value for the notes."
     },
 ]
