@@ -8,7 +8,7 @@ Classes:
     MovieApp: The main application class that manages user interactions and command execution.
 
 Dependencies:
-    - dispatcher: Contains the dispatcher object with available commands
+    - disp: Contains the disp object with available commands
     - user: Contains the User class
 
 Usage:
@@ -20,7 +20,7 @@ Example:
     app.start()
 """
 
-from dispatcher import dispatcher
+from app.dispatcher import dispatcher
 from user import User
 
 
