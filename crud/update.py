@@ -9,7 +9,7 @@ def update_movie(storage: IStorage) -> None:
     :return:
     """
     while True:
-        movie_title = input("Enter movie name (Exit to abort): ")
+        movie_title = input("Enter movie name ('Exit' to abort): ")
 
         if not movie_title:
             print("Please enter a movie name.")

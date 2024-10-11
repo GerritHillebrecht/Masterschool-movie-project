@@ -1,5 +1,6 @@
 from storage import IStorage
 from os import path, getcwd
+from config import MAX_RATING
 import webbrowser
 
 
@@ -22,6 +23,7 @@ def generate_website(storage: IStorage):
         handle.write(template)
 
     webbrowser.open(output_path)
+    print("Website was generated successfully")
     return grid
 
 
@@ -29,9 +31,12 @@ def generate_movie_grid(movies: dict[str, dict]):
     return "".join(
         f"""
         <li>
-            <img class="movie-poster" src="{movie["poster"]}" alt="{movie["title"]}">
-            <div class="movie-title">{movie["title"]}</div>
-            <div class="movie-year">{movie["year"]}</div>
+            <div class="movie">
+                <div class="rating">{movie["rating"]} / {MAX_RATING}</div>
+                <img class="movie-poster" src="{movie["poster"]}" alt="{movie["title"]}">
+                <div class="movie-title">{movie["title"]}</div>
+                <div class="movie-year">{movie["year"]}</div>
+            </div>
         </li>
         """
         for movie in movies.values()

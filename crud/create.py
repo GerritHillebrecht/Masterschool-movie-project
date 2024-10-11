@@ -9,17 +9,15 @@ def add_movie(storage: IStorage) -> None:
     Prompts the user for each meta-data-item and validates the input. Updates the database accordingly.
     """
     movie_title = prompt_title()
+
+    if not movie_title:
+        return
+
     try:
         movie_data = omdb.fetch_movie(movie_title)
     except ValueError:
         print(f"Couldn't find movie {movie_title}")
         return
-
-    # old version
-    # movie_data = {
-    #     prompt["name"]: validated_input(prompt)
-    #     for prompt in SUPPORTED_MOVIE_DATA
-    # }
 
     try:
         storage.add_movie(
@@ -34,11 +32,12 @@ def add_movie(storage: IStorage) -> None:
 
 def prompt_title():
     while True:
-        title = input("Which movie do you want to add? ")
+        title = input("Which movie do you want to add? (Empty input to abort)")
 
+        # Guard clause: Exit
         if not title:
-            print("Please provide a title.")
-            continue
+            print("No movie was added to the storage.")
+            return
 
         return title
 
