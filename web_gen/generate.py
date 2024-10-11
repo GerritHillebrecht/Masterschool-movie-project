@@ -10,11 +10,13 @@ def generate_website(storage: IStorage):
     base_path = path.join(getcwd(), "web_gen", "template")
     template_path = path.join(base_path, "index_template.html")
     output_path = path.join(base_path, "output.html")
+    username = storage.file_name
 
     with open(template_path, "r") as handle:
         template = handle.read()
         template = template.replace("__TEMPLATE_TITLE__", "Fantastic IMDB ripoff")
         template = template.replace("__TEMPLATE_MOVIE_GRID__", grid)
+        template = template.replace("__TEMPLATE_USER__", username)
 
     if not path.exists(output_path):
         open(output_path, "x")

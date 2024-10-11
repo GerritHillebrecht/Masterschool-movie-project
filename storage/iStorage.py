@@ -38,6 +38,10 @@ class IStorage(ABC):
 
         self._create_file_if_not_exists()
 
+    @property
+    def file_name(self):
+        return self._file_name
+
     def list_movies(self) -> dict[str, dict]:
         """ Returns the list of movies saved in the storage. """
         return self._read_from_file()
