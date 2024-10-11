@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="496b8a24-3b3c-49bc-9282-6b76ee63d3e9" name="Changes" comment="[feat] Added (very basic) user-management">
+    <list default="true" id="496b8a24-3b3c-49bc-9282-6b76ee63d3e9" name="Changes" comment="[feat] Added username to generated website">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analytics/movie_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/analytics/movie_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/movieApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/movieApp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crud/create.py" beforeDir="false" afterPath="$PROJECT_DIR$/crud/create.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crud/update.py" beforeDir="false" afterPath="$PROJECT_DIR$/crud/update.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_access/omdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_access/omdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/iStorage.py" beforeDir="false" afterPath="$PROJECT_DIR$/storage/iStorage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +181,39 @@
       <option name="project" value="LOCAL" />
       <updated>1728639292322</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="[debug] Changed movie not found condition">
+      <option name="closed" value="true" />
+      <created>1728645855897</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1728645855897</updated>
+    </task>
+    <task id="LOCAL-00011" summary="[feat] Added unversioned files.">
+      <option name="closed" value="true" />
+      <created>1728645983368</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1728645983368</updated>
+    </task>
+    <task id="LOCAL-00012" summary="[feat] Added unversioned files.">
+      <option name="closed" value="true" />
+      <created>1728646063886</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1728646063886</updated>
+    </task>
+    <task id="LOCAL-00013" summary="[feat] Added username to generated website">
+      <option name="closed" value="true" />
+      <created>1728646484250</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1728646484250</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -187,6 +226,9 @@
     <MESSAGE value="[feat] Added Website-generation" />
     <MESSAGE value="[chore] Updated style.css, changed some wordings, clean-up" />
     <MESSAGE value="[feat] Added (very basic) user-management" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] Added (very basic) user-management" />
+    <MESSAGE value="[debug] Changed movie not found condition" />
+    <MESSAGE value="[feat] Added unversioned files." />
+    <MESSAGE value="[feat] Added username to generated website" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] Added username to generated website" />
   </component>
 </project>

@@ -2,6 +2,11 @@ from string import ascii_lowercase
 
 
 def create_movie_key(title: str) -> str:
+    """
+    Creates an identifier key.
+    :param title: The Movie title
+    :return: Trimmed key to use in dictionaries and lists.
+    """
     return "".join(
         char
         for char in title.strip().replace(" ", "_").lower()

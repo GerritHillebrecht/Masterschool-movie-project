@@ -5,6 +5,10 @@ import webbrowser
 
 
 def generate_website(storage: IStorage):
+    """
+    Takes in the storage and creates a website based on the template and the data from the storage.
+    :param storage: The storage instance to base the website on.
+    """
     grid = generate_movie_grid(storage.list_movies())
 
     base_path = path.join(getcwd(), "web_gen", "template")
@@ -26,10 +30,14 @@ def generate_website(storage: IStorage):
 
     webbrowser.open(output_path)
     print("Website was generated successfully")
-    return grid
 
 
-def generate_movie_grid(movies: dict[str, dict]):
+def generate_movie_grid(movies: dict[str, dict]) -> str:
+    """
+    Creates a grid representing the movies for the website.
+    :param movies: The movies to represent.
+    :return: A string of HTML-data
+    """
     return "".join(
         f"""
         <li>

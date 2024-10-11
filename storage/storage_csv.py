@@ -9,7 +9,38 @@ This is slightly different from the given task, read the docstring for iStorage 
 
 class StorageCSV(IStorage):
     """
-    Creates a Storage-class-instance with jscsvon specifications.
+    StorageCSV Class
+
+    This class implements the IStorage abstract base class for CSV-based storage operations
+    in a movie database application. It provides concrete implementations for reading from
+    and writing to CSV files, as well as methods for converting between CSV and dictionary formats.
+
+    Inherits from:
+        IStorage
+
+    Attributes:
+        _csv_separator (str): The separator symbol used in the CSV file.
+
+    Methods:
+        __init__(directory: str, file_name: str, csv_separator: str = STORAGE_CSV_SEPERATOR_SYMBOL) -> None:
+            Initializes the StorageCSV object with the given parameters.
+
+        _read_from_file() -> dict[str, dict]:
+            Reads data from the CSV storage file.
+
+        _write_to_file(content: dict[str, dict]) -> dict[str, dict]:
+            Writes data to the CSV storage file.
+
+        _convert_from_storage(lines: list[str]) -> dict[str, dict]:
+            Converts CSV lines to a dictionary of movie data.
+
+        _convert_to_storage(movies: dict[str, dict]) -> str:
+            Converts a dictionary of movie data to CSV format.
+
+    Note:
+        This class uses a custom CSV format where each line represents a movie,
+        and values are separated by the specified CSV separator.
+        The file extension is automatically set to "csv" in the constructor.
     """
     __slots__ = "_csv_seperator"
 

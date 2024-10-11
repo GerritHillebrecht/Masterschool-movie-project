@@ -5,7 +5,6 @@ from storage import IStorage
 def search_movie(storage: IStorage) -> None:
     """
     Fetches all movies from the database and filters them depending on a prompted search_string.
-    :return:
     """
     while True:
         matching_movies = get_matching_movies(

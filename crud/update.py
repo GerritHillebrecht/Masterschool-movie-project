@@ -6,7 +6,6 @@ def update_movie(storage: IStorage) -> None:
     """
     Prompts the user for the movie title to update. If found, prompts for an updated rating.
     Updates the database accordingly.
-    :return:
     """
     while True:
         movie_title = input("Enter movie name ('Exit' to abort): ")

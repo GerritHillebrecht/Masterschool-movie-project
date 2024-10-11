@@ -1,3 +1,26 @@
+"""
+Movie Application Main Module
+
+This module serves as the entry point for a movie application. It handles user selection,
+initializes the main application, and starts the program.
+
+The module performs the following tasks:
+1. Loads environment variables from a .env file
+2. Displays a welcome message to the user
+3. Prompts the user to select or create a user profile
+4. Initializes and starts the main MovieApp with the selected user
+
+Dependencies:
+- dotenv: For loading environment variables
+- app: Contains the MovieApp class
+- config: Contains the WELCOME_MESSAGE constant
+- user: Contains the User class and select_user function
+
+Usage:
+Run this script directly to start the movie application.
+
+"""
+
 from dotenv import load_dotenv
 
 from app import MovieApp

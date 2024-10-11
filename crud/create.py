@@ -1,6 +1,5 @@
-from config import SUPPORTED_MOVIE_DATA
-from storage import IStorage
 from data_access import omdb
+from storage import IStorage
 
 
 def add_movie(storage: IStorage) -> None:
@@ -31,6 +30,19 @@ def add_movie(storage: IStorage) -> None:
 
 
 def prompt_title():
+    """
+    Prompts the user to enter a movie title.
+
+    This function repeatedly asks the user to input a movie title until a non-empty
+    title is provided or the user chooses to abort by entering an empty string.
+
+    Returns:
+        str or None: The movie title entered by the user, or None if the user aborts.
+
+    Note:
+        - If the user enters an empty string, the function prints a message and returns None.
+        - The function trims leading and trailing whitespace from the user's input.
+    """
     while True:
         title = input("Which movie do you want to add (Empty to abort)? ")
 
@@ -39,7 +51,7 @@ def prompt_title():
             print("No movie was added to the storage.")
             return
 
-        return title
+        return title.strip()
 
 
 def validated_input(prompt: dict) -> str:

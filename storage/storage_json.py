@@ -9,7 +9,31 @@ This is slightly different from the given task, read the docstring for iStorage 
 
 class StorageJson(IStorage):
     """
-    Creates a Storage-class-instance with json specifications.
+    StorageJson Class
+
+    This class implements the IStorage abstract base class for JSON-based storage operations
+    in a movie database application. It provides concrete implementations for reading from
+    and writing to JSON files.
+
+    Inherits from:
+        IStorage
+
+    Attributes:
+        Inherits all attributes from IStorage
+
+    Methods:
+        __init__(directory: str, file_name: str) -> None:
+            Initializes the StorageJson object with the given parameters.
+
+        _read_from_file() -> dict[str, dict]:
+            Reads data from the JSON storage file.
+
+        _write_to_file(content: dict[str, dict]) -> dict[str, dict]:
+            Writes data to the JSON storage file.
+
+    Note:
+        This class uses the built-in json module for serialization and deserialization of data.
+        The file extension is automatically set to "json" in the constructor.
     """
     def __init__(
             self,
