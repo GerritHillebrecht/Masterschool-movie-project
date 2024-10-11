@@ -7,7 +7,7 @@ initializes the main application, and starts the program.
 The module performs the following tasks:
 1. Loads environment variables from a .env file
 2. Displays a welcome message to the user
-3. Prompts the user to select or create a user profile
+3. Prompts the user to select or create a user profile if no user is given via argv
 4. Initializes and starts the main MovieApp with the selected user
 
 Dependencies:
@@ -22,6 +22,8 @@ Run this script directly to start the movie application.
 """
 
 from dotenv import load_dotenv
+
+from sys import argv
 
 from app import MovieApp
 from config import WELCOME_MESSAGE
@@ -39,7 +41,7 @@ def main() -> None:
     print(WELCOME_MESSAGE)
 
     # Select the user
-    username = select_user()
+    username = select_user(argv[1] if len(argv) > 1 else None)
     user = User(name=username)
 
     # Instantiate Movie App and start it with selected user.

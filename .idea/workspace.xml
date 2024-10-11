@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="496b8a24-3b3c-49bc-9282-6b76ee63d3e9" name="Changes" comment="[chore] Updated Documentation" />
+    <list default="true" id="496b8a24-3b3c-49bc-9282-6b76ee63d3e9" name="Changes" comment="[chore] Slight refactoring">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/user-management.json" beforeDir="false" afterPath="$PROJECT_DIR$/user/user-management.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/user.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +62,9 @@
       <recent name="C:\Development\MasterSchool\Movie-App-Reloaded" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Development\MasterSchool\Movie-App-Reloaded\app" />
       <recent name="C:\Development\MasterSchool\Movie-App-Reloaded" />
+      <recent name="C:\Development\MasterSchool\Movie-App-Reloaded\app\dispatcher" />
     </key>
   </component>
   <component name="RunManager">
@@ -212,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728647927107</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="[chore] Slight refactoring">
+      <option name="closed" value="true" />
+      <created>1728648495510</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1728648495510</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -229,6 +244,7 @@
     <MESSAGE value="[feat] Added unversioned files." />
     <MESSAGE value="[feat] Added username to generated website" />
     <MESSAGE value="[chore] Updated Documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="[chore] Updated Documentation" />
+    <MESSAGE value="[chore] Slight refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="[chore] Slight refactoring" />
   </component>
 </project>

@@ -34,10 +34,11 @@ Dependencies:
     - config module: For storage path configurations
 """
 
-from storage import IStorage, StorageJson, StorageCSV
-from os import getcwd, path
-from config import STORAGE_PATHS
 from json import loads, dumps
+from os import getcwd, path
+
+from config import STORAGE_PATHS
+from storage import IStorage, StorageJson
 
 user_file = f"{path.join(
     getcwd(),
@@ -120,7 +121,7 @@ class User:
         self._storage = new_storage
 
 
-def select_user() -> str:
+def select_user(username: str | None) -> str:
     """
     Prompts the user to select an existing user or create a new one.
 
@@ -129,6 +130,11 @@ def select_user() -> str:
     """
     users = load_users_from_storage()
 
+    if username:
+        if username not in set(user["name"] for user in users):
+            add_user_to_storage(username, users)
+
+        return username
     # Print selectable Users
     for idx, user in enumerate(users):
         print(f'{idx + 1}. {user["name"]}')
@@ -165,7 +171,7 @@ def prompt_user(users: list[dict]) -> dict:
         if user <= len(users):
             return users[user - 1]
 
-        return add_user_to_storage(users)
+        return add_user_to_storage(prompt_username(), users)
 
 
 def load_users_from_storage() -> list[dict]:
@@ -185,7 +191,7 @@ def load_users_from_storage() -> list[dict]:
     return users
 
 
-def add_user_to_storage(users: list[dict]) -> dict:
+def add_user_to_storage(username: str, users: list[dict]) -> dict:
     """
     Adds a new user to the storage file.
 
@@ -195,7 +201,6 @@ def add_user_to_storage(users: list[dict]) -> dict:
     Returns:
         dict: The newly created user dictionary.
     """
-    username = prompt_username()
 
     # extendable to preferred storage-type for example.
     user = {
