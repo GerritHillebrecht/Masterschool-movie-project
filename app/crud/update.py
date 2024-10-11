@@ -31,7 +31,7 @@ def update_movie(storage: IStorage) -> None:
             notes
         )
 
-        print(f"{movie_title}'s notes updated to: {notes}")
+        return print(f"{movie_title}'s notes updated to: {notes}")
 
 
 def prompt_movie_notes() -> str:
