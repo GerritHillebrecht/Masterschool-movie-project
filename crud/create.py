@@ -32,7 +32,7 @@ def add_movie(storage: IStorage) -> None:
 
 def prompt_title():
     while True:
-        title = input("Which movie do you want to add? (Empty input to abort)")
+        title = input("Which movie do you want to add (Empty to abort)? ")
 
         # Guard clause: Exit
         if not title:

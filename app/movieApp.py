@@ -33,7 +33,10 @@ class MovieApp:
 
     def _print_menu(self):
         # Start-up menu.
-        print("Menu:\n0. Exit")
+        print(
+            f"\nWelcome {self._user.name}"
+            "\nMenu:\n0. Exit"
+        )
         for idx, (label, command) in enumerate(self._dispatcher.items()):
             print(f'{idx + 1}. {command["name"]}')
 
