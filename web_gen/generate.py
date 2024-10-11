@@ -41,12 +41,12 @@ def generate_movie_grid(movies: dict[str, dict]) -> str:
     return "".join(
         f"""
         <li>
-            <div title="{movie.get("notes") or ""}" class="movie">
+            <a href="https://www.imdb.com/title/{movie.get("imdbID")}" target="_blank" title="{movie.get("notes") or ""}" class="movie">
                 <div class="rating">{movie["rating"]} / {MAX_RATING}</div>
                 <img class="movie-poster" src="{movie["poster"]}" alt="{movie["title"]}">
                 <div class="movie-title">{movie["title"]}</div>
                 <div class="movie-year">{movie["year"]}</div>
-            </div>
+            </a>
         </li>
         """
         for movie in movies.values()

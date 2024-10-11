@@ -24,6 +24,7 @@ def add_movie(storage: IStorage) -> None:
             year=int(movie_data["Year"]),
             rating=float(movie_data["imdbRating"]),
             poster=movie_data["Poster"],
+            imdbID=movie_data["imdbID"]
         )
     except ValueError:
         print(f"The movie {movie_title} is already in the storage.")

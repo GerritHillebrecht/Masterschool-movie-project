@@ -58,6 +58,13 @@ SUPPORTED_MOVIE_DATA = [
         "validator_message": f"Please provide a string value for the url."
     },
     {
+        "name": "imdbID",
+        "label": "Internet movie database ID",
+        "prompt": "Enter the ID on imdb: ",
+        "validator": lambda imdb_id: imdb_id and isinstance(imdb_id, str),
+        "validator_message": f"Please provide a string value for the imdbID."
+    },
+    {
         "name": "notes",
         "label": "Movies notes",
         "prompt": "Enter some notes for the movie: ",
