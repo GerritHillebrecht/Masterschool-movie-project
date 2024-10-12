@@ -50,7 +50,7 @@ class MovieApp:
         """
         self._user = user
         self._dispatcher = dispatcher
-
+        
     @property
     def user(self):
         """

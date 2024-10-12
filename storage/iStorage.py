@@ -102,7 +102,15 @@ class IStorage(ABC):
         """ Returns the list of movies saved in the storage. """
         return self._read_from_file()
 
-    def add_movie(self, title: str, year: int, rating: float, poster: str, imdbID: str) -> None:
+    def add_movie(
+            self,
+            title: str,
+            year: int,
+            rating: float,
+            poster: str,
+            imdb_id: str,
+            country_codes: list[str]
+    ) -> None:
         """ Adds a movie to the database. """
 
         if not isinstance(title, str):
@@ -117,10 +125,10 @@ class IStorage(ABC):
         if not isinstance(poster, str):
             raise TypeError("Please provide a poster-url as a string.")
 
-        if not isinstance(imdbID, str):
+        if not isinstance(imdb_id, str):
             raise TypeError("Please provide the imdbID as a string.")
 
-        if not title or not year or not rating or not poster or not imdbID:
+        if not title or not year or not rating or not poster or not imdb_id:
             raise ValueError("Please provide all the needed data about the movie.")
 
         movies_in_storage = self._read_from_file()
@@ -134,7 +142,8 @@ class IStorage(ABC):
             "rating": rating,
             "year": year,
             "poster": poster,
-            "imdbID": imdbID,
+            "imdbID": imdb_id,
+            "country_codes": country_codes,
         })
 
         self._write_to_file(movies_in_storage)

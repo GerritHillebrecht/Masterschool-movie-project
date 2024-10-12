@@ -65,6 +65,13 @@ SUPPORTED_MOVIE_DATA = [
         "validator_message": f"Please provide a string value for the imdbID."
     },
     {
+        "name": "country_codes",
+        "label": "Countries where the film was produced",
+        "prompt": "Enter the production countries: ",
+        "validator": lambda countries: countries and isinstance(countries, str),
+        "validator_message": f"Please provide a string value for the countries."
+    },
+    {
         "name": "notes",
         "label": "Movies notes",
         "prompt": "Enter some notes for the movie: ",

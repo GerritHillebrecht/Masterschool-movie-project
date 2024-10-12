@@ -21,10 +21,9 @@ Run this script directly to start the movie application.
 
 """
 
-from dotenv import load_dotenv
-
-from sys import argv
 from argparse import ArgumentParser
+
+from dotenv import load_dotenv
 
 from app import MovieApp
 from config import WELCOME_MESSAGE

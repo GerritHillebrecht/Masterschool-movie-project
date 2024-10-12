@@ -1,5 +1,6 @@
 from data_access import omdb
 from storage import IStorage
+from utility import country_codes
 
 
 def add_movie(storage: IStorage) -> None:
@@ -24,7 +25,8 @@ def add_movie(storage: IStorage) -> None:
             year=int(movie_data["Year"]),
             rating=float(movie_data["imdbRating"]),
             poster=movie_data["Poster"],
-            imdbID=movie_data["imdbID"]
+            country_codes=get_country_codes(movie_data.get("Country")),
+            imdb_id=movie_data["imdbID"],
         )
     except ValueError:
         print(f"The movie {movie_title} is already in the storage.")
@@ -69,3 +71,10 @@ def validated_input(prompt: dict) -> str:
             return prompt["formatter"](selected_prompt) if "formatter" in prompt else selected_prompt
 
         print(prompt["validator_message"])
+
+
+def get_country_codes(countries: str) -> list[str]:
+    return [
+        country_codes.get(country.strip())
+        for country in countries.split(",")
+    ]

@@ -38,11 +38,23 @@ def generate_movie_grid(movies: dict[str, dict]) -> str:
     :param movies: The movies to represent.
     :return: A string of HTML-data
     """
+
+    print("movies", movies)
+
+
     return "".join(
         f"""
         <li>
             <a href="https://www.imdb.com/title/{movie.get("imdbID")}" target="_blank" title="{movie.get("notes") or ""}" class="movie">
                 <div class="rating">{movie["rating"]} / {MAX_RATING}</div>
+                <div class="countries">
+                    {
+                        "".join(
+                            f'<img width="20" src="https://flagcdn.com/w20/{country_code.lower()}.png" />'
+                            for country_code in movie["country_codes"]
+                        )
+                    }
+                </div>
                 <img class="movie-poster" src="{movie["poster"]}" alt="{movie["title"]}">
                 <div class="movie-title">{movie["title"]}</div>
                 <div class="movie-year">{movie["year"]}</div>
