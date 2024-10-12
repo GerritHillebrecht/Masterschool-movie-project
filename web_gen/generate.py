@@ -39,9 +39,6 @@ def generate_movie_grid(movies: dict[str, dict]) -> str:
     :return: A string of HTML-data
     """
 
-    print("movies", movies)
-
-
     return "".join(
         f"""
         <li>
