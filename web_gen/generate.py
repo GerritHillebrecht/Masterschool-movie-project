@@ -49,6 +49,7 @@ def generate_movie_grid(movies: dict[str, dict]) -> str:
                         "".join(
                             f'<img width="20" src="https://flagcdn.com/w20/{country_code.lower()}.png" />'
                             for country_code in movie["country_codes"]
+                            if country_code
                         )
                     }
                 </div>
